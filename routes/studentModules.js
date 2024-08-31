@@ -29,7 +29,6 @@ router.get('/:id', async (req, res) => {
       ORDER BY uu.lib_ue`;
 
     const result = await connection.execute(query, [studentId]);
-
     if (result.rows.length === 0) {
       res.status(404).json({ error: 'Modules not found for the student' });
     } else {
